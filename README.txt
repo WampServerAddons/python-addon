@@ -15,7 +15,7 @@ Manual install instructions:
  1. download Python and the Win32 extentions from the sites listed above.
     Make sure the versions of Python matches for both of them.
  2. Run the installer for Python. Be sure to tell it to install the files in
-    c:\wamp\bin\python\python%PYTHON_VERSION
+    c:\wamp\bin\python\python%PYTHON_VERSION%
  3. add c:\wamp\bin\python\python%PYTHON_VERSION to your %PATH%
     (a logoff or reboot maybe required)
  4. Run the installer for the Windows Extensions for Python.

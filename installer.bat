@@ -39,18 +39,22 @@ mkdir %TMP%
 REM download Python files to temp directory
 echo 	Downloading %ADDON% binaries to temp directory...
 wget.exe -nd -q -P %TMP% %PYTHON_DOWNLOAD%
+if not %ERRORLEVEL%==0 (echo FAIL: could not download %ADDON% binaries& pause& exit 1)
 wget.exe -nd -q -P %TMP% %PYWIN32_DOWNLOAD%
+if not %ERRORLEVEL%==0 echo WARNING: could not download %ADDON% win32 extensions
 
 
 REM install the binary files in the WampServer install directory
 echo 	Installing %ADDON% to the WampServer install directory...
 msiexec /i %TMP%\%PYTHON_FILE% /passive TARGETDIR=%PYTHON_BIN%
+if not %ERRORLEVEL%==0 (echo FAIL: could not install %ADDON% binaries& pause& exit 1)
 
 REM FIXME: a silent install would be great, but not available
 REM FIXME: through the pywin32 project releases. Might need to look
 REM FIXME: into using a 3rd party distrubution of python or pywin32
 echo 	Installing the Windows Extensions for Python...
 %TMP%\%PYWIN32_FILE%
+if not %ERRORLEVEL%==0 echo WARNING: could not install %ADDON% win32 extensions
 
 REM add the Python bin directory to the PATH so apache can find them
 echo 	Setting enviorment variables...

@@ -24,10 +24,3 @@ Manual install instructions:
 Using the Installer:
  usage: installer.bat
 
-
-TODO:
- * also install mod_python and/or mod_wsgi
- * integration with wampserver manager menu on systray
-
-FIXME:
- * spelling/capitalization check on all files

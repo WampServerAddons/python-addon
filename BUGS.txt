@@ -1,0 +1,23 @@
+Current bugs in the installer
+
+* pywin32 has gui executable. see if there is a zip version
+
+* no mod_wsgi support or mod_python support
+
+* the installer for mod_python will not install without copying a file to the same directory as the exe - http://trac.edgewall.org/ticket/4496
+
+* official mod_python releases are only support python 2.5 and mod_wsgi will not support that version of python. either an unofficial release of one of these will have to be used, or only one can be installed at a time.
+
+mod_python:	http://www.modpython.org/
+mod_wsgi:	http://code.google.com/p/modwsgi/
+
+* mod_python download locations vary by version.
+
+* possibly test with portablepython or movable python
+
+* Code scraps for mod_wsgi/mod_python
+
+copy installer\temp\mod_wsgi-win32-ap22py26-3.3.so c:\wamp\bin\apache\apache2.2.17\modules\mod_wsgi.so
+installer\bin\unzip.exe -q installer\temp\mp20dll.zip -d installer\temp
+copy installer\temp\mod_python.dll c:\wamp\bin\apache\apache2.2.17\modules\mod_python.so
+
